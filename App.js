@@ -1,19 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text,View, Image, SafeAreaView } from 'react-native';
-let x = 1;
+import React from "react";
+import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
+
 export default function App() {
-  const handlePress=()=> console.log("Text Pressed")
- 
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}> Hello World!</Text>
-      <Image 
-        blurRadius={10}
-        fadeDuration={1000}
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300"}}/>
+      <Button color="orange" title="Click Me" onPress={()=>Alert.alert("My title", "My Message", [{text: "Yes", onPress: ()=> {console.log("Yes")}}, {text: "No", onPress: ()=> {console.log("No")}}])}/>
+      <Button 
+        title="Click Me for a Prompt"
+        onPress={() => Alert.prompt("My title", "My message", text => console.log(text))}
+      />
     </SafeAreaView>
   );
 }
