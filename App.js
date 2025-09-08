@@ -1,9 +1,17 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
+import { StyleSheet, SafeAreaView, Button, Alert, View, Dimensions, useWindowDimensions } from "react-native";
 
 export default function App() {
+  console.log("====")
+  console.log(useWindowDimensions());
   return (
     <SafeAreaView style={styles.container}>
+      <View style={{ 
+        backgroundColor: "dodgerblue",
+        width: "100%",
+        height: "30%"
+        }}
+        ></View>
       <Button color="orange" title="Click Me" onPress={()=>Alert.alert("My title", "My Message", [{text: "Yes", onPress: ()=> {console.log("Yes")}}, {text: "No", onPress: ()=> {console.log("No")}}])}/>
       <Button 
         title="Click Me for a Prompt"
