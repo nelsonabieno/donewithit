@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 function App(props) {
   return (
@@ -9,16 +9,20 @@ function App(props) {
         justifyContent: "center",
         alignItems: "center",
       }}>
-      <View
+      <Text
         style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          borderWidth: 10,
-          borderColor: "royalblue",
-          borderRadius: 50,
+          fontFamily: "Roboto",
+          fontSize: 30,
+          fontStyle: "italic",
+          fontWeight: "600",
+          color: "tomato",
+          textTransform: "capitalize",
+          textAlign: "center",
+          lineHeight: "30"
         }}
-        ></View>
+      >
+        I love React Native ❤️! This is my first React Native App. Here is so more text
+      </Text>
     </View>
   );
 }
